@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Charlas — corpus de interacción humano–IA y co-construcción conceptual.">
+  <title>Charlas · Corpus humano–IA</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">C</div>
+        <div><strong>CHARLAS</strong><span>human ↔ IA</span></div>
+      </div>
+      <nav>
+        <button class="nav-item active" data-view="home">Inicio</button>
+        <button class="nav-item" data-view="corpus">Corpus</button>
+        <button class="nav-item" data-view="method">Metodología</button>
+        <button class="nav-item" data-view="annotations">Anotaciones</button>
+      </nav>
+      <div class="sidebar-footer">
+        <span id="repo-status" class="status-dot"></span>
+        <span>fuente: GitHub / main</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu" id="menu">☰</button>
+        <div class="crumb" id="crumb">Charlas / Inicio</div>
+        <div class="top-actions">
+          <label class="search"><span>⌕</span><input id="search" placeholder="Buscar en el corpus…" autocomplete="off"></label>
+          <button class="theme" id="theme" title="Cambiar tema">◐</button>
+        </div>
+      </header>
+
+      <section id="content" class="content"></section>
+    </main>
+  </div>
+
+  <div class="reader" id="reader" aria-hidden="true">
+    <div class="reader-panel">
+      <div class="reader-head"><button id="close-reader">← Volver</button><span id="reader-meta"></span><a id="github-file" target="_blank" rel="noopener">GitHub ↗</a></div>
+      <article id="reader-content" class="markdown"></article>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
