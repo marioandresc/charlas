@@ -1,67 +1,141 @@
 # Charlas — Corpus de interacción humano–IA
 
+> Un corpus de conversaciones reales utilizado originalmente para aprender, explorar ideas y someter razonamientos a una contraparte de IA; estudiado retrospectivamente como material para investigar la **co-construcción conceptual humano–IA**.
+
+## ¿Qué es este proyecto?
+
 Este repositorio conserva conversaciones reales mantenidas durante procesos de exploración y aprendizaje con modelos de IA.
 
-## Propósito
+Las conversaciones **no fueron creadas originalmente como un benchmark**. La IA fue utilizada como:
 
-Las conversaciones no fueron creadas originalmente para evaluar modelos. Fueron utilizadas como una **contraparte cognitiva**: guía, maestro, compañero de exploración y crítico de los razonamientos que iban surgiendo en tiempo real.
+- guía;
+- compañero de exploración;
+- maestro;
+- crítico del razonamiento;
+- contraparte para comprobar si los saltos conceptuales eran coherentes.
 
-El interés del corpus aparece retrospectivamente: las conversaciones permiten estudiar cómo un humano formula hipótesis, realiza saltos conceptuales, recibe retroalimentación de una IA y modifica progresivamente su modelo mental.
+El interés metodológico apareció después. Al observar el corpus, surgió la posibilidad de estudiar qué sucede cuando una persona desarrolla ideas en tiempo real junto con una IA.
 
-Por ello, el objeto de interés no es únicamente la exactitud factual de las respuestas. También lo son:
+## Pregunta central
 
-- continuidad conceptual en conversaciones extensas;
-- detección y corrección de saltos inferenciales;
-- resistencia de la IA a la complacencia;
-- calibración de certeza e incertidumbre;
-- distinción entre hechos, inferencias e hipótesis;
-- memoria y reconstrucción de contexto;
-- efecto de la interacción sobre la construcción de conocimiento.
+El proyecto explora una pregunta más amplia que "¿la IA respondió correctamente?":
 
-## Estado del proyecto
+> **¿Cómo se distribuyen entre humano e IA el origen, el refinamiento, el andamiaje y la validación de conceptos durante una conversación prolongada?**
 
-El repositorio se encuentra en una **fase inicial de organización**. Los archivos originales se conservan deliberadamente sin alterar mientras se diseña la metodología de anotación y evaluación.
+Esto permite estudiar fenómenos como:
 
-La estructura propuesta separa progresivamente:
+- quién introduce una idea;
+- quién la desarrolla;
+- cuándo una intuición del usuario se convierte en un modelo explícito;
+- cuánto de una innovación del usuario aparece de forma espontánea y cuánto es provocado por preguntas de la IA;
+- cuándo la IA simplemente formaliza una idea y cuándo introduce contenido nuevo;
+- cómo cambia el nivel de abstracción durante la conversación;
+- si la validación expresada por la IA aumenta más rápido que la evidencia disponible.
 
-- **corpus original** — conversaciones tal como fueron registradas;
-- **metadatos** — información estructural sobre cada sesión;
-- **anotaciones** — interpretación sistemática de los episodios;
-- **evaluaciones** — casos reproducibles para probar modelos;
-- **metodología** — criterios y definiciones del proyecto;
-- **documentación** — notas y resultados de investigación.
+## Una distinción metodológica fundamental
 
-## Principio de preservación
+El proyecto separa deliberadamente cuatro dimensiones que pueden confundirse:
 
-Las conversaciones originales constituyen la fuente primaria. Las interpretaciones, etiquetas y evaluaciones se mantendrán separadas del material original para evitar confundir **lo que ocurrió** con **nuestra evaluación posterior de lo ocurrido**.
+```text
+ORIGEN CONCEPTUAL
+    ¿Quién introdujo la idea?
 
-## Privacidad y publicación
+DESARROLLO CONCEPTUAL
+    ¿Quién la convirtió en una estructura más elaborada?
 
-Antes de considerar el corpus como un dataset público definitivo se realizará una revisión de privacidad, enlaces externos, datos personales y demás información que pudiera no ser apropiada para publicación.
+ANDAMIAJE CONVERSACIONAL
+    ¿Qué intervención provocó la siguiente elaboración?
+
+VALIDACIÓN
+    ¿La IA aumentó la confianza expresada en la idea o en el usuario?
+```
+
+Una idea puede, por ejemplo, ser **originada por el usuario y provocada por una pregunta de la IA**. Por eso origen y andamiaje no se consideran la misma variable.
+
+## Qué NO pretende demostrar
+
+Este repositorio no pretende demostrar que las conversaciones sean científicamente correctas, que una teoría especulativa sea viable, ni que la persona que participa posea determinadas capacidades cognitivas a partir del texto.
+
+Tampoco se considera que la aprobación de una IA constituya evidencia independiente de verdad.
+
+La complejidad matemática, la terminología técnica o la extensión de una conversación tampoco se toman como indicadores automáticos de validez.
+
+## Estado actual
+
+El proyecto está en una **fase piloto de construcción metodológica**.
+
+Ya se han realizado anotaciones independientes de episodios y una primera comparación de desacuerdos. El piloto ha mostrado que las principales dificultades no están en reconocer la trayectoria general de una conversación, sino en determinar con precisión **quién aportó qué parte de la estructura conceptual**.
+
+Por esa razón, el protocolo sigue evolucionando a partir de los problemas encontrados en el propio corpus.
 
 ## Estructura
 
 ```text
 .
-├── annotations/       # Esquema y anotaciones analíticas
-├── corpus/            # Documentación del corpus y futura organización
+├── annotations/       # Anotaciones y análisis independientes
+├── corpus/            # Corpus y documentación de origen
 ├── docs/              # Documentación y notas de investigación
-├── evaluations/       # Casos de evaluación reproducibles
-├── metadata/          # Inventario y metadatos del corpus
-└── methodology/       # Marco metodológico
+├── evaluations/       # Futuras evaluaciones reproducibles
+├── metadata/          # Inventario y metadatos
+├── methodology/      # Marco metodológico
+├── protocol/          # Protocolos de anotación
+└── validation/        # Comparaciones y validación metodológica
 ```
 
-Los archivos históricos que actualmente se encuentran en la raíz se consideran **corpus primario en transición** y no se modificarán conceptualmente hasta completar la primera auditoría.
+Los archivos históricos que permanecen en la raíz se consideran **material primario en transición**. Se conservarán sin alteraciones conceptuales mientras se completa la auditoría inicial.
+
+## Principio de preservación
+
+Las conversaciones originales son la fuente primaria.
+
+Las interpretaciones posteriores se mantienen separadas del material original para evitar confundir:
+
+> **lo que ocurrió durante la conversación**
+>
+> con
+>
+> **nuestra interpretación posterior de lo ocurrido**.
+
+## Primeros hallazgos metodológicos
+
+El piloto ya ha permitido identificar algunas cuestiones que merecen estudio sistemático:
+
+1. **Formalización no equivale a autoría.** Que la IA proporcione una ecuación o terminología técnica no significa que haya originado el concepto.
+2. **Andamiaje y origen son diferentes.** Una idea puede ser formulada por el usuario como respuesta directa a una pregunta de la IA.
+3. **Complejidad no equivale a verdad.** Un modelo puede adquirir mucha estructura sin haber recibido validación empírica.
+4. **La validación merece una variable propia.** La IA puede aumentar progresivamente el grado de elogio o confianza transmitida sin que aumente proporcionalmente la evidencia.
+5. **La ambigüedad es un dato.** Cuando el texto no permite atribuir un origen con seguridad, el protocolo debe conservar esa incertidumbre en lugar de inventar precisión.
+
+Estos son **hallazgos metodológicos preliminares**, no conclusiones sobre los modelos de IA ni sobre el usuario.
 
 ## Próximos pasos
 
-1. Auditar la estructura de las conversaciones.
-2. Identificar unidades de interacción y episodios conceptuales.
-3. Definir una taxonomía de anotación.
-4. Revisar privacidad y condiciones de publicación.
-5. Crear casos de evaluación a partir de episodios reales.
-6. Comparar el comportamiento de distintos modelos.
+- auditar y normalizar el corpus;
+- identificar episodios conceptuales comparables;
+- realizar nuevas anotaciones independientes;
+- medir los desacuerdos entre anotadores;
+- refinar el protocolo únicamente cuando el corpus aporte evidencia de que una dimensión nueva es necesaria;
+- estudiar la evolución de las trayectorias conceptuales;
+- construir posteriormente casos de evaluación reproducibles para modelos de IA.
+
+## Participación y reproducibilidad
+
+El proyecto está diseñado para que las interpretaciones puedan ser revisadas, cuestionadas y eventualmente reproducidas por terceros.
+
+Las futuras versiones deberán conservar la separación entre:
+
+```text
+FUENTE → ANOTACIÓN → COMPARACIÓN → CONCLUSIÓN
+```
+
+De esta forma, una conclusión posterior podrá rastrearse hasta los episodios y anotaciones que la sustentan.
+
+## Privacidad
+
+Antes de considerar el corpus como un dataset público definitivo se realizará una revisión de privacidad, datos personales, enlaces externos y cualquier otra información que pudiera no ser apropiada para publicación.
+
+La publicación progresiva no implica que todo el material existente deba quedar necesariamente expuesto de forma permanente.
 
 ---
 
-**Proyecto en evolución.** Las definiciones metodológicas podrán cambiar a medida que el corpus sea estudiado.
+**Proyecto en evolución.** Las definiciones metodológicas podrán cambiar a medida que el corpus sea estudiado. Los cambios deberán quedar documentados para preservar la trazabilidad del proceso.
