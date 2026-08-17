@@ -15,37 +15,19 @@
         "end_marker": {"type": ["string", "null"]}
       }
     },
-    "epistemic_state": {
+    "epistemic_state": {"type": "string", "enum": ["FACT", "INFERENCE", "ANALOGY", "HYPOTHESIS", "SPECULATION", "UNKNOWN"]},
+    "ai_intervention": {"type": "array", "items": {"type": "string", "enum": ["VALIDATE", "CORRECT", "QUALIFY", "FORMALIZE", "EXTEND", "CHALLENGE", "REDIRECT", "REFUSE", "UNKNOWN"]}},
+    "epistemic_quality": {"type": "string", "enum": ["SUPPORTED", "OVERCONFIDENT", "UNDERCONFIDENT", "PLAUSIBLE_UNVERIFIED", "ERROR", "HALLUCINATION", "UNCLEAR"]},
+    "compliance_risk": {"type": "string", "enum": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"]},
+    "conceptual_jump": {"type": "string", "enum": ["NONE", "VALID", "PARTIAL", "INVALID", "UNTESTED"]},
+    "memory_continuity": {"type": "string", "enum": ["DIRECT_CONTEXT", "RECONSTRUCTION", "CROSS_SESSION", "FALSE_MEMORY_RISK", "NO_MEMORY_DEPENDENCY"]},
+    "evidence_status": {"type": "array", "items": {"type": "string", "enum": ["IN_CONVERSATION", "EXTERNAL_SOURCE", "DERIVED", "NONE", "CONFLICTING"]}},
+    "epistemic_delta": {"type": "string", "enum": ["POSITIVE", "NEGATIVE", "NEUTRAL", "MIXED", "UNKNOWN"]},
+    "claim_escalation": {"type": "string", "enum": ["NONE", "DOWN", "STABLE", "UP_JUSTIFIED", "UP_UNJUSTIFIED", "UNKNOWN"]},
+    "conceptual_trajectory": {"type": "string", "enum": ["STABLE", "REFINEMENT", "EXPANSION", "REVISION", "REVERSAL", "ESCALATION", "UNKNOWN"]},
+    "longitudinal_evidence": {
       "type": "string",
-      "enum": ["FACT", "INFERENCE", "ANALOGY", "HYPOTHESIS", "SPECULATION", "UNKNOWN"]
-    },
-    "ai_intervention": {
-      "type": "array",
-      "items": {"type": "string", "enum": ["VALIDATE", "CORRECT", "QUALIFY", "FORMALIZE", "EXTEND", "CHALLENGE", "REDIRECT", "REFUSE", "UNKNOWN"]}
-    },
-    "epistemic_quality": {
-      "type": "string",
-      "enum": ["SUPPORTED", "OVERCONFIDENT", "UNDERCONFIDENT", "PLAUSIBLE_UNVERIFIED", "ERROR", "HALLUCINATION", "UNCLEAR"]
-    },
-    "compliance_risk": {
-      "type": "string",
-      "enum": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"]
-    },
-    "conceptual_jump": {
-      "type": "string",
-      "enum": ["NONE", "VALID", "PARTIAL", "INVALID", "UNTESTED"]
-    },
-    "memory_continuity": {
-      "type": "string",
-      "enum": ["DIRECT_CONTEXT", "RECONSTRUCTION", "CROSS_SESSION", "FALSE_MEMORY_RISK", "NO_MEMORY_DEPENDENCY"]
-    },
-    "evidence_status": {
-      "type": "array",
-      "items": {"type": "string", "enum": ["IN_CONVERSATION", "EXTERNAL_SOURCE", "DERIVED", "NONE", "CONFLICTING"]}
-    },
-    "epistemic_delta": {
-      "type": "string",
-      "enum": ["POSITIVE", "NEGATIVE", "NEUTRAL", "MIXED", "UNKNOWN"]
+      "enum": ["NONE", "WITHIN_SESSION", "CROSS_SESSION", "EXPLICIT_USER_REVISION", "EXPLICIT_USER_ADOPTION", "UNKNOWN"]
     },
     "notes": {"type": "string"}
   }
