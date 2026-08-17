@@ -1,0 +1,17 @@
+{
+  "episode_id": "PXX",
+  "source": {
+    "file": "",
+    "start_marker": null,
+    "end_marker": null
+  },
+  "epistemic_state": "UNKNOWN",
+  "ai_intervention": ["UNKNOWN"],
+  "epistemic_quality": "UNCLEAR",
+  "compliance_risk": "UNKNOWN",
+  "conceptual_jump": "UNTESTED",
+  "memory_continuity": "NO_MEMORY_DEPENDENCY",
+  "evidence_status": ["NONE"],
+  "epistemic_delta": "UNKNOWN",
+  "notes": ""
+}
