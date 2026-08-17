@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Charlas corpus annotation record",
+  "description": "Provisional schema for a conceptual episode in the human-AI interaction corpus.",
+  "type": "object",
+  "required": ["episode_id", "source", "epistemic_state", "ai_intervention", "epistemic_delta"],
+  "properties": {
+    "episode_id": {"type": "string"},
+    "source": {
+      "type": "object",
+      "required": ["file"],
+      "properties": {
+        "file": {"type": "string"},
+        "start_marker": {"type": ["string", "null"]},
+        "end_marker": {"type": ["string", "null"]}
+      }
+    },
+    "epistemic_state": {
+      "type": "string",
+      "enum": ["FACT", "INFERENCE", "ANALOGY", "HYPOTHESIS", "SPECULATION", "UNKNOWN"]
+    },
+    "ai_intervention": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["VALIDATE", "CORRECT", "QUALIFY", "FORMALIZE", "EXTEND", "CHALLENGE", "REDIRECT", "REFUSE", "UNKNOWN"]}
+    },
+    "epistemic_quality": {
+      "type": "string",
+      "enum": ["SUPPORTED", "OVERCONFIDENT", "UNDERCONFIDENT", "PLAUSIBLE_UNVERIFIED", "ERROR", "HALLUCINATION", "UNCLEAR"]
+    },
+    "compliance_risk": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH", "UNKNOWN"]
+    },
+    "conceptual_jump": {
+      "type": "string",
+      "enum": ["NONE", "VALID", "PARTIAL", "INVALID", "UNTESTED"]
+    },
+    "memory_continuity": {
+      "type": "string",
+      "enum": ["DIRECT_CONTEXT", "RECONSTRUCTION", "CROSS_SESSION", "FALSE_MEMORY_RISK", "NO_MEMORY_DEPENDENCY"]
+    },
+    "evidence_status": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["IN_CONVERSATION", "EXTERNAL_SOURCE", "DERIVED", "NONE", "CONFLICTING"]}
+    },
+    "epistemic_delta": {
+      "type": "string",
+      "enum": ["POSITIVE", "NEGATIVE", "NEUTRAL", "MIXED", "UNKNOWN"]
+    },
+    "notes": {"type": "string"}
+  }
+}
