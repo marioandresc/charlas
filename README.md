@@ -138,4 +138,31 @@ La publicación progresiva no implica que todo el material existente deba quedar
 
 ---
 
+Now I'll gather evidence about the repository structure and contents.Now let me explore the directory structure more fully:## What this is
+Charlas is a research corpus of real human–AI conversations, designed to study how humans and AI collaborate during conceptual exploration and learning. Rather than evaluating whether AI responses are "correct," this project traces how ideas originate, evolve, and gain support across an extended conversation—asking: who introduced an idea, who developed it, what conversational moves prompted elaboration, and how did the human's reasoning change?
+Stack
+Language: Spanish (academic research documentation)
+Format: Markdown + plain text conversation records
+Research framework: Custom annotation taxonomy with epistemological and conversational dimensions
+Primary focus: Methodological study of human-AI collaborative reasoning
+How it's organized
+```
+.
+├── corpus/                 Raw and curated conversation archives
+├── annotations/            Analysis using taxonomy-v0.1 (episodic, epistemic, procedural labels)
+├── blind/                  Pilot blind annotation exercises (P07–P09) for inter-rater validation
+├── metadata/               Inventory and episode indexing
+├── methodology/            (Planned) Framework documentation
+├── protocol/               (Planned) Annotation protocols
+├── validation/             (Planned) Inter-annotator agreement analysis
+├── docs/                   (Planned) Research notes
+├── evaluations/            (Planned) Reproducible test cases for AI models
+├── [01–11].txt, *.md       Primary material in transition (raw conversation logs)
+└── README.md               Project overview & research questions
+```
+How it fits together: The project separates source material (original conversations) from interpretation (annotations), maintaining traceability from raw episode → annotation → comparison → conclusion. The taxonomy distinguishes four dimensions: conceptual origin (who introduced an idea), development (who elaborated it), scaffolding (what conversational moves triggered refinement), and validation (how confidence shifted). Blind annotation pilots test whether independent annotators agree on these dimensions, revealing both what can be reliably measured and where ambiguity is real rather than resolvable.
+Try asking
+What does the taxonomy-v0.1 annotation scheme measure, and how does it separate "origin" from "scaffolding"?
+What are the preliminary findings so far from the pilot corpus analysis?
+How would you add a new conversational episode to the blind annotation pilot?
 **Proyecto en evolución.** Las definiciones metodológicas podrán cambiar a medida que el corpus sea estudiado. Los cambios deberán quedar documentados para preservar la trazabilidad del proceso.
