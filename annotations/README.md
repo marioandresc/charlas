@@ -4,16 +4,19 @@ Aquí se documentará el esquema utilizado para analizar las conversaciones.
 
 Las anotaciones representan una **interpretación posterior** del corpus y nunca deben confundirse con el registro original.
 
-Áreas iniciales de interés:
+## Taxonomía actual
 
-- hipótesis del usuario;
-- saltos inferenciales;
-- validación o corrección por parte de la IA;
-- errores conceptuales;
-- complacencia o falta de contradicción;
-- calibración de certeza;
-- hechos, inferencias e hipótesis;
-- memoria y reconstrucción de contexto;
-- evolución del modelo mental del usuario.
+La versión experimental vigente es [`taxonomy-v0.1.md`](taxonomy-v0.1.md).
 
-La taxonomía definitiva se establecerá después de auditar una muestra representativa del corpus.
+Las dimensiones iniciales incluyen:
+
+- estado epistemológico de las proposiciones;
+- tipo de intervención de la IA;
+- calidad epistemológica de la intervención;
+- riesgo de complacencia;
+- validez del salto conceptual;
+- memoria y continuidad;
+- `EPISTEMIC_DELTA`, es decir, el cambio observable en la calidad conceptual del razonamiento del usuario;
+- estado de la evidencia.
+
+La taxonomía será validada contra episodios reales antes de considerarse estable.
