@@ -1,0 +1,22 @@
+{
+  "episode_id": "P09",
+  "source": "16-08-26 C Memoria Sesion Gemini.md",
+  "nodes": [
+    {"id":"U0","actor":"USER","label":"memoria conceptual mediante matemática fractal","origin":"USER_INITIATED"},
+    {"id":"A1","actor":"AI","label":"relación con embeddings hiperbólicos y estructuras jerárquicas","origin":"AI_REFINEMENT"},
+    {"id":"A2","actor":"AI","label":"Concepto → semilla; Objetivo → operador; Resultado → atractor","origin":"AI_INITIATED"},
+    {"id":"U3","actor":"USER","label":"control de iteraciones según ubicación del atractor","origin":"USER_REFINEMENT"},
+    {"id":"A4","actor":"AI","label":"formalización de la cantidad de iteraciones como granularidad dinámica","origin":"AI_REFINEMENT"}
+  ],
+  "edges": [
+    {"from":"U0","to":"A1","relation":"REFINED_BY"},
+    {"from":"A1","to":"A2","relation":"EXTENDED_TO"},
+    {"from":"A2","to":"U3","relation":"DEVELOPED_BY"},
+    {"from":"U3","to":"A4","relation":"FORMALIZED_BY"}
+  ],
+  "provisional_assessment": {
+    "trajectory":"CO_CONSTRUCTED",
+    "claim_escalation":"UP_UNJUSTIFIED",
+    "epistemic_delta":"UNKNOWN"
+  }
+}
